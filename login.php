@@ -22,7 +22,9 @@
         if($array[1] == $username && password_verify($password, $array[3])) {
           session_start();
           $_SESSION['username'] = $username;
-          header('Location: index.php');
+          $_SESSION['password'] = $password;
+          $_SESSION['email'] = $array[2];
+          header('Location: '. ROOT_URL);
         }else {
           $msg = '*The username or password are invalid. Check for spelling errors and Caps Lock key then try again.';
         }

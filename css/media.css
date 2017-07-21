@@ -1,0 +1,28 @@
+@media (min-width: 768px) {
+  .container {
+    /*width: 90%;*/
+  }
+
+  .menu-nav a {
+    font-size: 1.2rem;
+    margin-left: 1.75rem;
+  }
+
+  .menu-nav {
+    margin-left: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .register {
+    margin-right: 0;
+  }
+
+  .menu-nav a {
+    margin-left: 2.5rem;
+  }
+
+  .menu-nav {
+    margin-left: 5rem;
+  }
+}

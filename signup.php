@@ -17,7 +17,7 @@
     $email2 = $_POST['email2'];
     $password = $_POST['password'];
     $password2 = $_POST['password2'];
-
+    echo $username;
 
     if (filter_var($email, FILTER_VALIDATE_EMAIL) === false){
       $emailError = 'You have entered an invalid Email address';
@@ -28,8 +28,8 @@
     if(strlen($username) < 6 ||  strlen($username) > 16 || preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $username)) {
       $userError = '6-16 character, no symbols';
     }
-    if(strlen($password) < 8) {
-      $passError = 'Password must be at least 8 letters';
+    if(strlen($password) < 8 || strlen($password) > 16) {
+      $passError = 'Password must be at least 8-16 letters';
     }
     if($password2 != $password) {
       $repassError = 'Passwords do not match';
@@ -58,9 +58,9 @@
     <h1>CREATE YOUR <span>FREE</span> ACCOUNT!</h1>
     <input type="text" name="username" placeholder="USER NAME">
     <p class="error"><?php echo $userError; ?></p>
-    <input type="email" name="email" placeholder="EMAIL ADDRESS">
+    <input type="text" name="email" placeholder="EMAIL ADDRESS">
     <p class="error"><?php echo $emailError; ?></p>
-    <input type="email2" name="email2" placeholder="CONFIRM EMAIL ADDRESS">
+    <input type="text" name="email2" placeholder="CONFIRM EMAIL ADDRESS">
     <p class="error"><?php echo $reemailError; ?></p>
     <input type="password" name="password" placeholder="PASSWORD">
     <p class="error"><?php echo $passError; ?></p>

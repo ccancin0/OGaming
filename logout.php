@@ -13,6 +13,6 @@
   // Finally, destroy the session.
   session_destroy();
 
-  // header('Location: login.php');
+  // header('Location: index.php');
   header('Location: ' . $_SERVER['HTTP_REFERER']);
  ?>
